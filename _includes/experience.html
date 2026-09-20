@@ -1,0 +1,21 @@
+<section class="section" aria-labelledby="experience-heading">
+  <div class="section-heading">
+    <span class="section-number">01</span>
+    <h2 id="experience-heading">Experience</h2>
+  </div>
+  {% for item in site.data.profile.experience %}
+  <article class="experience-entry">
+    <div class="experience-entry__meta">
+      <span>{{ item.dates }}</span><span>{{ item.company }}</span>
+    </div>
+    <div>
+      <h3>{{ item.role }}</h3>
+      <ul class="impact-list">
+        {% for highlight in item.highlights %}
+        <li>{{ highlight }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </article>
+  {% endfor %}
+</section>

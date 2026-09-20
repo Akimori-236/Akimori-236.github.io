@@ -1,0 +1,36 @@
+<section class="section section--projects" aria-labelledby="projects-heading">
+  <div class="section-heading">
+    <span class="section-number">04</span>
+    <h2 id="projects-heading">Selected projects</h2>
+  </div>
+  {% if site.data.profile.projects.size > 0 %}
+  <div class="project-grid">
+    {% for project in site.data.profile.projects %}
+    <article class="project-card">
+      <p class="project-card__label">{{ project.type | default: 'PROJECT' }}</p>
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.description }}</p>
+      <a href="{{ project.url }}" target="_blank" rel="noreferrer"
+        >View repository <span aria-hidden="true">↗</span></a
+      >
+    </article>
+    {% endfor %}
+  </div>
+  {% endif %} {% if site.data.profile.repository_urls.size > 0 %}
+  <div
+    id="github-projects"
+    class="project-grid"
+    data-repositories="{{ site.data.profile.repository_urls | jsonify }}"
+    aria-live="polite"
+  ></div>
+  {% elsif site.data.profile.projects.size == 0 %}
+  <div class="project-placeholder">
+    <p>Project case studies are being prepared.</p>
+    <span
+      >Add repository entries in <code>_data/profile.yml</code> when
+      ready.</span
+    >
+  </div>
+  {% endif %}
+</section>
+<script src="{{ '/assets/projects.js' | relative_url }}" defer></script>

@@ -1,0 +1,14 @@
+title: "Ng Wee Seng"
+description: "Assistant Development Engineer building practical software for complex operations."
+url: "https://akimori-236.github.io"
+baseurl: ""
+lang: "en"
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-seo-tag
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

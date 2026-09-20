@@ -1,0 +1,40 @@
+<header class="masthead">
+  <div class="masthead__eyebrow">
+    <span class="status-dot"></span> Available for meaningful engineering work
+  </div>
+  <div class="masthead__grid">
+    <div>
+      <p class="kicker">
+        {{ site.data.profile.company }} / {{ site.data.profile.location }}
+      </p>
+      <h1>{{ site.data.profile.name }}</h1>
+      <p class="masthead__role">{{ site.data.profile.role }}</p>
+      <p class="masthead__summary">{{ site.data.profile.summary }}</p>
+      <nav class="contact-links" aria-label="Contact links">
+        {% if site.data.profile.contact.email != '' %}<a
+          href="mailto:{{ site.data.profile.contact.email }}"
+          >Email <span aria-hidden="true">↗</span></a
+        >{% else %}<span class="contact-placeholder">Email coming soon</span>{%
+        endif %} {% if site.data.profile.contact.linkedin != '' %}<a
+          href="{{ site.data.profile.contact.linkedin }}"
+          target="_blank"
+          rel="noreferrer"
+          >LinkedIn <span aria-hidden="true">↗</span></a
+        >{% else %}<span class="contact-placeholder">LinkedIn coming soon</span
+        >{% endif %} {% if site.data.profile.contact.github != '' %}<a
+          href="{{ site.data.profile.contact.github }}"
+          target="_blank"
+          rel="noreferrer"
+          >GitHub <span aria-hidden="true">↗</span></a
+        >{% else %}<span class="contact-placeholder">GitHub coming soon</span>{%
+        endif %}
+      </nav>
+    </div>
+    <div class="masthead__stamp" aria-label="Profile details">
+      <span>PROFILE_01</span>
+      <strong>Software</strong>
+      <strong>Systems</strong>
+      <strong>Impact</strong>
+    </div>
+  </div>
+</header>

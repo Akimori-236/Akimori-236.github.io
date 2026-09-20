@@ -1,0 +1,27 @@
+<section class="section" aria-labelledby="education-heading">
+  <div class="section-heading">
+    <span class="section-number">03</span>
+    <h2 id="education-heading">Education & certifications</h2>
+  </div>
+  <div class="credentials-grid">
+    <div>
+      <p class="subheading">Education</p>
+      {% for item in site.data.profile.education %}
+      <article class="credential">
+        <h3>{{ item.qualification }}</h3>
+        <p>{{ item.institution }}</p>
+        {% if item.detail != '' %}<span>{{ item.detail }}</span>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    <div>
+      <p class="subheading">Certifications</p>
+      {% for item in site.data.profile.certifications %}
+      <article class="credential">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.issuer }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
